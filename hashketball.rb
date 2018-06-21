@@ -196,3 +196,13 @@ end
 def most_points_scored
   point = 0
   name = ""
+  game_hash.each{|location, data|
+    data[:players].each{|names, ele|
+      if ele[:points] > point
+        point = ele[:points]
+        name = names
+      end
+    }
+  }
+  return name
+end
