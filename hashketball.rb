@@ -248,5 +248,5 @@ def long_name_steals_a_ton?
       end
     }
   }
-  return name = player_with_longest_name
+  return name == player_with_longest_name
 end
