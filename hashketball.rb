@@ -207,4 +207,18 @@ def most_points_scored
   return name
 end
 
-def 
+def winning_team
+  point1 = 0
+  point2 = 0
+  game_hash[:home][:players].each {|names, ele|
+      point1 += ele[:points]
+      }
+  game_hash[:away][:players].each {|names, ele|
+      point2 += ele[:points]
+      }
+  if point1 > point2 
+    return game_hash[:home][:team_name]
+  else
+    return game_hash[:away][:team_name]
+  end
+end
